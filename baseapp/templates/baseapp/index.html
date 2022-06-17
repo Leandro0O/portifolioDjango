@@ -1,0 +1,180 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/medias.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo/favicon.ico' %}" type="image/x-icon">
+    <title>Leandro Gonçalves</title>
+</head>
+
+<body>
+    <!-- header -->
+
+    <header>
+        <a href="#" class="logo">Leandro Gonçalves</a>
+        <div class="bx bx-menu" id="menu-icon">
+
+        </div>
+        <ul class="navbar">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+
+        </ul>
+    </header>
+
+    <!-- home -->
+
+
+    <section class="home" id="home">
+        <div class="home-text ">
+            <h4>Olá, me chamo</h4>
+            <h1>Leandro
+                <span>Gonçalves</span>
+            </h1>
+            <h3>Web Developer</h3>
+        </div>
+        <div class="notification">
+            <div class="col-6">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>
+                        {{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- about -->
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="{% static 'img/aboutimg.png' %}" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>Sobre Mim</h2>
+            <h5>Developer <span>& Designer</span></h5>
+            <p>A tecnologia é um assunto que desde muito cedo conseguiu atrair minha atenção, isso fez com que sempre
+                estivesse correndo atrás de novas notícias sobre novas tecnologias, programas para computadores, jogos e
+                tudo que envolve esse universo maravilhoso. Com o passar do tempo surgiu o interesse de alguma forma
+                fazer parte do desenvolvimento dos programas, sites e jogos que consumia.</p>
+            <P>Atualmente sou estudante do curso de Análise e Desenvolvimento de Sistemas pelo Senac-EAD, além de ter
+                concluído outros cursos complementares.</P>
+            <h5><span>Minhas Skills:</span></h5>
+            <p>
+            <ul>
+                <li>
+                    <i class="devicon-python-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-html5-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-css3-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-javascript-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-bootstrap-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-mysql-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-php-plain"></i>
+                </li>
+                <li>
+                    <i class="devicon-django-plain"></i>
+                </li>
+                <li>
+
+                    <i class="devicon-flask-original"></i>
+
+                </li>
+
+
+            </ul>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- projects -->
+    <section class="projects" id="projects">
+        <div class="center">
+            <h2> Meus Projetos</h2>
+            <p>Estes são meus projetos mais recentes, venha dar um olhadinha!!</p>
+        </div>
+        <div class="projects-content">
+            {% for p in project_list %}
+            <a href="{{p.get_absolute_url}}">
+                <div class="box">
+                    <img src="{{p.img.url}}" alt="">
+                    <p>{{p.title}}</p>
+                    <h5>{{p.description|safe|linebreaks|truncatewords:20}}</h5>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+    </section>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <div class="contact-form">
+            <h2>Entre em Contato</h2>
+            <p>
+                <ul>
+                    <li><a href="https://github.com/Leandro0O" ><i class='bx bxl-github' ></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=553199426611" ><i class='bx bxl-whatsapp'></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/leandro-gon%C3%A7alves-reis/"><i class='bx bxl-linkedin' ></i></a></li>
+                </ul>
+            </p>
+            <p>Se preferir basta preencher o formulário abaixo para enviar uma mensagem diretamente
+                para o meu e-mail</p>
+            <form action="{% url 'project:email'%}" method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+                <input type="submit" value="Enviar" class="send">
+            </form>
+        </div>
+
+    </section>
+
+    <!--Back to top-->
+
+    <button type="button" class="" id="btn-back-to-top">
+        <i class='bx bxs-chevron-up'></i>
+    </button>
+
+    <!-- footer -->
+    <footer class="footer">
+        <p>Copyright &copy; 2022 Leandro Gonçalves. All Rights Reserved.</p>
+    </footer>
+
+    <!--Js-->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/backtotop.js' %}"></script>
+</body>
+
+</html>

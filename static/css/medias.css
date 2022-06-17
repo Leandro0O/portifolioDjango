@@ -1,0 +1,93 @@
+:root{
+    --bg-color: #101010;
+    --second-bg-clor: #191919;
+    --text-color: #fff;
+    --secound-color: #c6c9d8bf;
+    --main-color: #03C03C;
+    --secondary-main-color: #228B22;
+    --big-font: 5.3rem;
+    --h2-font: 4.2rem;
+    --p-font: 1.1rem;
+}
+
+@media (max-width:1270px) {
+    header {
+        padding: 18px 4%;
+        transition: .2s;
+    }
+
+    header.sticky {
+        padding: 10px 4%;
+        transition: .2s;
+
+    }
+
+    section {
+        padding: 80px 4%;
+        transition: .2s;
+    }
+
+    :root {
+        --big-font: 4.8rem;
+        --h2-font: 3.8rem;
+        --p-font: 1rem;
+        transition: .2s;
+    }
+}
+
+@media (max-width:990px) {
+    .home{
+        height: 100vh;
+    }
+    #menu-icon{
+        display: initial;
+    }
+    .navbar{
+        position: absolute;
+        top: -700px;
+        left: 0%;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        transition: all .30s;
+    }
+    .navbar a{
+        display: block;
+        padding: 1.1rem;
+        margin: 1.3rem;
+        border-left: 2px solid var(--text-color);
+    }
+    .navbar a:hover{
+        background: var(--main-color);
+    }
+    .navbar a::after{
+        display: none;
+    }
+    .navbar.active{
+        top: 100%;
+    }
+    .about{
+        grid-template-columns: 1fr;
+    }
+    .about-img{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .about-img img{
+        max-width: 100%;
+        width: 400px;
+        height: auto;
+    }
+    .contact{
+        grid-template-columns: 1fr;
+
+    }
+    .contact-form form{
+        width: 100%;
+    }
+    .messages{
+        width: 100%;
+    }
+
+}

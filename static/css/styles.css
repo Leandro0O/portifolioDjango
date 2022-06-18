@@ -11,6 +11,9 @@
     scroll-behavior: smooth;
     scroll-padding-top: 3.5rem;
 }
+a{
+    text-decoration: none;
+}
 
 :root {
     --bg-color: #101010;
@@ -203,7 +206,7 @@ header.sticky {
 }
 
 .about {
-    background: var(--second-bg-clor);
+    background: var(--bg-clor);
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     align-items: center;

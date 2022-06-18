@@ -69,6 +69,7 @@
     }
     .about{
         grid-template-columns: 1fr;
+        
     }
     .about-img{
         text-align: center;

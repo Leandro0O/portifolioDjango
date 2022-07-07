@@ -221,6 +221,10 @@ header.sticky {
     border-radius: 30px;
     box-shadow: rgba(3, 192, 60, 0.4) 5px 5px, rgba(34, 139, 34, 0.3) 10px 10px, rgba(0, 86, 59, 0.2) 15px 15px, rgba(0, 69, 38, 0.1) 20px 20px;
 }
+.about-img img:hover{
+    transform: scale(1.1);
+    transition: ease .35s;
+}
 
 
 
@@ -231,7 +235,8 @@ header.sticky {
 
 .about-text h5 {
     font-size: 28px;
-    margin-bottom: 25px;
+    color: var(--main-color);
+    margin-bottom: 30px;
     letter-spacing: 2px;
 }
 

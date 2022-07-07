@@ -129,7 +129,7 @@
             {% for p in project_list %}
             <a href="{{p.get_absolute_url}}">
                 <div class="box">
-                    <img src="{{p.img.url}}" alt="">
+                    <img src="{{p.img.url}}" alt="" height="50vh">
                     <p>{{p.title}}</p>
                     <h5>{{p.description|safe|linebreaks|truncatewords:20}}</h5>
                 </div>

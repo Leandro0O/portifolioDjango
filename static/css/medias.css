@@ -10,6 +10,31 @@
     --p-font: 1.1rem;
 }
 
+@media (max-width:1400px) {
+    header {
+        padding: 25px 15%;
+        transition: .2s;
+    }
+
+    header.sticky {
+        padding: 25px 15%;
+        transition: .2s;
+
+    }
+    
+    section {
+        padding: 160px 15%;
+        transition: .2s;
+    }
+    .about {
+        display: flex;
+        grid-template-columns: repeat(2, 2fr);
+        align-items: center;
+        grid-gap: 4rem; 
+    }
+
+}
+
 @media (max-width:1270px) {
     header {
         padding: 18px 4%;
@@ -38,6 +63,7 @@
 @media (max-width:990px) {
     .home{
         height: 100vh;
+        background: url(../img/BackgroundPortifolio_adobe_express.png);
     }
     #menu-icon{
         display: initial;
@@ -83,6 +109,232 @@
     .contact{
         grid-template-columns: 1fr;
 
+    }
+    .contact-form form{
+        width: 100%;
+    }
+    .messages{
+        width: 100%;
+    }
+
+}
+@media (max-width:500px) {
+    .home {
+        height: 100vh;
+        width: 100%;
+        background: url(../img/BackgroundPortifolio_adobe_express.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+    
+    }
+    
+    .home-text h1 {
+        margin: 20px 0px 20px;
+        font-size: 4.5rem;
+    
+    
+    }
+    
+    span {
+        color: var(--main-color);
+    
+    }
+    
+    .home-text h3 {
+        font-size: 25px;
+        margin-bottom: 55px;
+        color: var(--secondary-main-color);
+    
+    }
+    
+    .home-text h4 {
+        color: #585c63;
+        font-size: 25px;
+        letter-spacing: 2px;
+    
+    }
+    #menu-icon{
+        display: initial;
+    }
+    .navbar{
+        position: absolute;
+        top: -700px;
+        left: 0%;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        transition: all .30s;
+    }
+    .navbar a{
+        display: block;
+        padding: 1.1rem;
+        margin: 1.3rem;
+        border-left: 2px solid var(--text-color);
+    }
+    .navbar a:hover{
+        background: var(--main-color);
+    }
+    .navbar a::after{
+        display: none;
+    }
+    .navbar.active{
+        top: 100%;
+    }
+    .about {
+        background: var(--bg-clor);
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        text-align: center;
+        grid-gap: 2rem;
+    
+    }
+    .about-img{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .about-img img{
+        max-width: 95%;
+        width: 350px;
+        height: auto;
+    }
+    .box {
+       width: 95%;
+    
+    }
+    .contact{
+        grid-template-columns: 1fr;
+
+    }
+    .contact-form h2 {
+        text-align: center;
+    
+    }
+    .contact-form  ul  {
+        text-align: center;
+    
+    }
+    .contact-form p {
+        text-align: center;
+    
+    }
+    .contact-form form{
+        width: 100%;
+    }
+    .messages{
+        width: 100%;
+    }
+
+}
+@media (max-width:375px) {
+    .home {
+        height: 100vh;
+        width: 100%;
+        background: url(../img/BackgroundPortifolio_adobe_express.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+    
+    }
+    
+    .home-text h1 {
+        margin: 20px 0px 20px;
+        font-size: 4.5rem;
+    
+    
+    }
+    
+    span {
+        color: var(--main-color);
+    
+    }
+    
+    .home-text h3 {
+        font-size: 25px;
+        margin-bottom: 55px;
+        color: var(--secondary-main-color);
+    
+    }
+    
+    .home-text h4 {
+        color: #585c63;
+        font-size: 25px;
+        letter-spacing: 2px;
+    
+    }
+    #menu-icon{
+        display: initial;
+    }
+    .navbar{
+        position: absolute;
+        top: -700px;
+        left: 0%;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        transition: all .30s;
+    }
+    .navbar a{
+        display: block;
+        padding: 1.1rem;
+        margin: 1.3rem;
+        border-left: 2px solid var(--text-color);
+    }
+    .navbar a:hover{
+        background: var(--main-color);
+    }
+    .navbar a::after{
+        display: none;
+    }
+    .navbar.active{
+        top: 100%;
+    }
+    .about {
+        background: var(--bg-clor);
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        text-align: center;
+        grid-gap: 2rem;
+    
+    }
+    .about-img{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .about-img img{
+        max-width: 95%;
+        width: 350px;
+        height: auto;
+    }
+    .box {
+       width: 95%;
+    
+    }
+    .contact{
+        grid-template-columns: 1fr;
+
+    }
+    .contact-form h2 {
+        text-align: center;
+    
+    }
+    .contact-form  ul  {
+        text-align: center;
+    
+    }
+    .contact-form p {
+        text-align: center;
+    
     }
     .contact-form form{
         width: 100%;
